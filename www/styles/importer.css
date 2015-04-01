@@ -1,0 +1,171 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #eee; }
+
+.wrap {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 25px; }
+  .wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.flash {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  color: #fff; }
+  .flash::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.success {
+  background-color: #1BBC9B; }
+
+.error {
+  background-color: #bd4832; }
+
+.info {
+  background-color: #67aeeb; }
+
+form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  form:last-child {
+    margin-right: 0; }
+  form .form-group {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2; }
+    form .form-group::after {
+      clear: both;
+      content: "";
+      display: table; }
+    form .form-group:last-of-type {
+      border-bottom: none; }
+  form label {
+    display: inline; }
+  form input {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    margin: 10px 0;
+    font-size: 16px;
+    background-color: #f2f2f2; }
+  form input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    margin: 10px; }
+  form button {
+    padding: 10px;
+    display: block;
+    width: 160px;
+    border-radius: 3px;
+    background-color: #1BBC9B;
+    border: none;
+    margin: 10px 0; }
+
+form.citation-form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%;
+  margin-top: 25px; }
+  form.citation-form:last-child {
+    margin-right: 0; }
+  form.citation-form .author, form.citation-form .title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    form.citation-form .author:last-child, form.citation-form .title:last-child {
+      margin-right: 0; }
+
+button {
+  padding: 10px;
+  display: block;
+  width: 160px;
+  border-radius: 3px;
+  background-color: #1BBC9B;
+  border: none;
+  color: #fff;
+  font-size: 16px; }
+
+.twitter-wrap {
+  display: block;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  margin: 10px 0; }
+  .twitter-wrap:last-child {
+    margin-right: 0; }
+  .twitter-wrap .twitter-login {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #67aeeb;
+    width: 150px;
+    text-align: center; }
+
+a {
+  color: #1BBC9B;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+  a:hover {
+    color: #18a689; }
+
+nav {
+  background-color: #fff;
+  margin-bottom: 25px; }
+
+nav ul {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  nav ul::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+nav ul li {
+  display: inline-block;
+  margin: 0;
+  float: left; }
+  nav ul li.nav-right {
+    float: right; }
+
+nav ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 1em 1em; }
+  nav ul li a:hover {
+    background-color: #f2f2f2; }
+
+/*# sourceMappingURL=importer.css.map */
