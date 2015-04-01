@@ -1,0 +1,14 @@
+nav
+	ul
+		li
+			a(href="/") Home
+		if req.session.authenticated
+			li
+				a(href="/me")= req.user.username
+			li.nav-right
+				a(href="/logout") logout
+		else
+			li.nav-right
+				a(href="/login") login
+			li.nav-right
+				a(href="/register") register

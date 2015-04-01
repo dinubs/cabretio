@@ -1,0 +1,41 @@
+extends ./layout.jade
+
+block title
+	title Home - Cabretio
+
+block content
+	unless req.session.authenticated
+		p Cabretio makes it easy to maintain your research papers bibliography pages. Try it out below.
+	
+	form.citation-form(id="#citationForm", action="/citation/create", method="POST")
+		h3 New Citation
+		.form-group
+			.author
+				label(for="author") Author
+				input#author(type="text", name="author" placeholder="Burke, Kenneth")
+			.title
+				label(for="title") Title
+				input#title(type="text", name="title" placeholder="Language as Symbolic Action: Essays on Life, Literature, and Method" required)
+		.form-group
+			label(for="publication") Publication Info
+			input#publication(type="text", name="publication" placeholder="Berkeley: U of California P, 1966" required)
+		.form-group
+			label(for="isUrl") Website?
+			input#isUrl(type="checkbox", name="isUrl" placeholder="placeholder")
+		.form-group.url
+			label(for="url") Web Address
+			input#url(type="url", name="url" placeholder="http://www.facebook.com")
+			label(for="dateAccessed") Date Accessed
+			input#dateAccessed(type="date", name="dateAccessed" placeholder="Date")
+		if req.session.authenticated
+			.form-group
+				label(for="category") Category
+				input#category(type="text", name="category" placeholder="English Paper")
+		.form-group
+			button(type="submit") Create
+
+
+
+
+
+			

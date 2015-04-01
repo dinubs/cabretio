@@ -1,0 +1,18 @@
+extends ../layout.jade	
+
+block title 
+	title Register - Cabretio
+
+block content
+	if (errors)
+		each error in errors
+			= __(error) 
+
+	form(role="form" action="/auth/local/register" method="post")
+		input( type="text" name="username" placeholder="Username")
+		input( type="text" name="email" placeholder="Email")
+		input( type="password" name="password" placeholder="Password")
+		button( type="submit") Sign up
+	.twitter-wrap
+		| Sign Up With
+		a.twitter-login(href="/auth/twitter" role="button") Twitter

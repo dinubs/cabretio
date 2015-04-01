@@ -1,0 +1,157 @@
+@import "bourbon";
+@import "neat";
+
+$green: #1BBC9B;
+$blue: #67aeeb;
+$red: #bd4832;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	background-color: #eee;
+}
+
+.wrap {
+	@include outer-container;
+	background-color: #fff; 
+	padding: 25px;
+}
+
+.flash {
+	@include outer-container;
+	padding: 25px;
+	color: #fff;
+}
+
+.success {
+	background-color: $green;
+}
+
+.error {
+	background-color: $red;
+}
+
+.info {
+	background-color: $blue;
+}
+
+form {
+	@include span-columns(6);
+	.form-group {
+		@include row;
+		padding: 10px 0;
+		border-bottom: 1px solid darken(#fff, 5);
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	label {
+		display: inline;
+	}
+	input {
+		padding: 10px;
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		border: none;
+		margin: 10px 0;
+		font-size: 16px;
+		background-color: darken(#fff, 5);
+	}
+	input[type="checkbox"] {
+		display: inline;
+		width: auto;
+		margin: 10px;
+	}
+
+	button {
+		padding: 10px;
+		display: block;
+		width: 160px;
+		border-radius: 3px;
+		background-color: $green;
+		border: none;
+		margin: 10px 0;
+	}
+}
+
+form.citation-form {
+	@include span-columns(8);
+	@include shift(2);
+	margin-top: 25px;
+	.author, .title {
+		@include span-columns(6);
+	}
+}
+
+button {
+	padding: 10px;
+	display: block;
+	width: 160px;
+	border-radius: 3px;
+	background-color: $green;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+}
+
+.twitter-wrap {
+	display: block;
+	@include span-columns(6);
+	margin: 10px 0;
+	.twitter-login {
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		margin: 5px 0;
+		padding: 10px;
+		border-radius: 3px;
+		background-color: $blue;
+		width: 150px;
+		text-align: center;
+	}
+}
+
+a {
+	color: $green;
+	text-decoration: none;
+	@include transition(all 0.3s);
+	&:hover {
+		color: darken($green, 5);
+	}
+}
+
+$radius: 9px;
+$skew: 25deg;
+$main-color: rgb(89, 211, 156);
+
+nav {
+	background-color: #fff;
+	margin-bottom: 25px;
+}
+
+nav ul {
+	@include outer-container;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 0;
+	float: left;
+	&.nav-right {
+		float: right;
+	}
+}
+nav ul li a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 1em 1em;
+	&:hover {
+		background-color: darken(#fff, 5);
+	}
+}

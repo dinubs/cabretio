@@ -1,0 +1,10 @@
+if req.session.flash
+	if req.session.flash.message
+		each m in req.flash('message')
+			div.flash.info= m
+	if req.session.flash.error
+		each m in req.flash('error')
+			div.flash.error= m
+	if req.session.flash.success
+		each m in req.flash('success')
+			div.flash.success= m
