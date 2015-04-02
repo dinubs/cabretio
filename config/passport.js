@@ -14,6 +14,12 @@
  * http://passportjs.org/guide/providers/
  */
 
+ if (process.env.PRODUCTION) {
+  var callback = 'https://lychee-cupcake-2260.herokuapp.com/auth/twitter/callback'
+ } else {
+  var callback = 'http://localhost:1337/auth/twitter/callback';
+ }
+
 module.exports.passport = {
   local: {
     strategy: require('passport-local').Strategy
@@ -28,6 +34,7 @@ module.exports.passport = {
     protocol: 'oauth',
     strategy: require('passport-twitter').Strategy,
     options: {
+      callbackURL: callback,
       consumerKey: 'WlcCZ5iSwkngGJ1GVTMZdBssX',
       consumerSecret: 'WwBBlF9c8fj2RBcPv9bbRrRV9P1dcRiJo1eLk4QCkZXoLtvhJN'
     }
