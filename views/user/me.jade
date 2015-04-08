@@ -1,7 +1,34 @@
 extends ../layout.jade
 
 block title
-	title= user.username + '- Cabretio'
+	title= user.username + ' - Cabretio'
 
 block content
-	= user.username
+	h1 Your Citations
+	each cat in categories
+		h2= cat.title
+		small 
+			a(href="/download/category/"+ cat.id) Download This Category
+		each citation in cat.citations
+			p
+				a(href="/download/citation/" + citation.id) Download
+				if citation.author && citation.author != ''
+					span= citation.author + '. '
+				span= citation.title + '. '
+				if citation.journalTitle
+					span= citation.journalTitle + '. '
+				if citation.publication && citation.publicationInfo == 'n.p.'
+					span= citation.publicationInfo + ' '
+				else if citation.publicationInfo != ''
+					span= citation.publicationInfo + '. '
+				else
+					span= 'n.p. '
+					
+				if citation.isUrl
+					span Web.
+					= ' '
+					span= formatDate(citation.dateAccessed)
+				else
+					span Print.
+					= ' '
+		hr

@@ -6,7 +6,6 @@ module.exports = function(req, res, next) {
 		next();
 	} else {
 		req.flash('message', 'You need to be signed in to see that');
-		sails.log(req.session)
-		res.redirect('/');
+		res.redirect('/login');
 	}
 }

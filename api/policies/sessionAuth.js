@@ -11,7 +11,6 @@ module.exports = function(req, res, next) {
 
   // User is allowed, proceed to the next policy, 
   // or if this is the last policy, the controller
-  sails.log("YES");
   if (req.session.authenticated) {
   	User.find({id: req.session.passport.user}).exec(function(err, data) {
 		sails.log(data);

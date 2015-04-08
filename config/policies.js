@@ -31,6 +31,11 @@ module.exports.policies = {
   UserController: {
     '*': false,
     me: ['loggedIn', 'passport', 'sessionAuth']
+  },
+  DownloadController: {
+    '*': false,
+    downloadCategory: ['loggedIn', 'passport', 'sessionAuth'],
+    downloadCitation: ['passport', 'sessionAuth']
   }
   /***************************************************************************
   *                                                                          *

@@ -7,7 +7,7 @@ block content
 	unless req.session.authenticated
 		p Cabretio makes it easy to maintain your research papers bibliography pages. Try it out below.
 	
-	form.citation-form(id="#citationForm", action="/citation/create", method="POST")
+	form.citation-form(id="#citationForm", action="/me/citations/create", method="POST")
 		h3 New Citation
 		.form-group
 			.author
@@ -17,8 +17,14 @@ block content
 				label(for="title") Title
 				input#title(type="text", name="title" placeholder="Language as Symbolic Action: Essays on Life, Literature, and Method" required)
 		.form-group
+			label(for="journalTitle") Journal Title
+			input#journalTitle(type="text", name="journalTitle" placeholder="Stanford Encyclopedia of Philosophy")
+		.form-group
 			label(for="publication") Publication Info
-			input#publication(type="text", name="publication" placeholder="Berkeley: U of California P, 1966" required)
+			input#publication(type="text", name="publication" placeholder="Berkeley: U of California P, 1966")
+		.form-group
+			label(for="yearPublished") Year Published
+			input#yearPublished(type="text", name="yearPublished" placeholder="n.d." maxlength="4")
 		.form-group
 			label(for="isUrl") Website?
 			input#isUrl(type="checkbox", name="isUrl" placeholder="placeholder")
@@ -30,7 +36,7 @@ block content
 		if req.session.authenticated
 			.form-group
 				label(for="category") Category
-				input#category(type="text", name="category" placeholder="English Paper")
+				input#category(type="text", name="category" placeholder="English Paper" required)
 		.form-group
 			button(type="submit") Create
 

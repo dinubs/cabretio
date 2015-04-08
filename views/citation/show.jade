@@ -1,0 +1,35 @@
+extends ../layout
+
+mixin formatDate(date)
+	var month = months[date.getMonth()];
+	var day = date.getDay();
+	var year = date.getFullYear();
+
+	span= day + ' ' + month + ' ' + year + '. '
+
+block title
+	title= citation.title
+
+block content
+	if citation.category
+		p This citation is in the #{citation.category.title} category
+	p
+		a(href="/download/citation/" + citation.id) Download This Citation
+	if citation.author != ''
+		span= citation.author + '. '
+	span= citation.title + '. '
+	span= citation.journalTitle + '. '
+	if citation.publicationInfo == 'n.p.'
+		span= citation.publicationInfo + ' '
+	else if citation.publicationInfo != ''
+		span= citation.publicationInfo + '. '
+	else
+		span= 'n.p. '
+		
+	if citation.isUrl
+		span Web.
+		= ' '
+		span= formatDate(citation.dateAccessed)
+	else
+		span Print.
+		= ' '

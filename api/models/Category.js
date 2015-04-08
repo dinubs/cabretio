@@ -5,7 +5,8 @@ var Category = {
 		title: {type: 'string', required: true},
 		user: {
 			model: "user"
-		}
+		},
+		citations: {collection: "Citation", via: "category"}
 	}
 }
 

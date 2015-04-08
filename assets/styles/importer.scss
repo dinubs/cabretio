@@ -4,6 +4,7 @@
 $green: #1BBC9B;
 $blue: #67aeeb;
 $red: #bd4832;
+$darkBlue: #32465a;
 
 * {
 	margin: 0;
@@ -12,7 +13,9 @@ $red: #bd4832;
 
 body {
 	font-family: Verdana, sans-serif;
-	background-color: #eee;
+	background-color: $darkBlue;
+	margin-top: 150px;
+	margin-bottom: 50px;
 }
 
 .wrap {
@@ -116,6 +119,14 @@ button {
 	}
 }
 
+hr {
+	background-color: $darkBlue;
+	border: none;
+	height: 1px;
+	width: 95%;
+	margin: 25px auto;
+}
+
 a {
 	color: $green;
 	text-decoration: none;
@@ -132,6 +143,8 @@ $main-color: rgb(89, 211, 156);
 nav {
 	background-color: #fff;
 	margin-bottom: 25px;
+	position: fixed; top: 0; left: 0;
+	width: 100%;
 }
 
 nav ul {

@@ -8,13 +8,12 @@
 module.exports = {
 	index: function(req, res) {
 		User.find().exec(function(err, u) {
-
 			res.view('user/index', {users: u});
 		});
 	},
 	me: function(req, res) {
-		User.findOne({id: req.session.passport.user}).exec(function(err, u) {
-			res.view('user/me', {user: u});
+		Category.find({user: req.session.passport.user}).populate('citations').exec(function(err, data) {
+			res.view('user/me', {user: req.user, categories: data});
 		});
 	}
 };

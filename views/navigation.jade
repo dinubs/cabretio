@@ -5,6 +5,9 @@ nav
 		if req.session.authenticated
 			li
 				a(href="/me")= req.user.username
+			if req.session.citations && req.session.citations.length > 0
+				li 
+					a(href="/me/citations/import") Import Citations
 			li.nav-right
 				a(href="/logout") logout
 		else
