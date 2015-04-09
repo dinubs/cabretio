@@ -10,7 +10,9 @@ html {
 
 body {
   font-family: Verdana, sans-serif;
-  background-color: #eee; }
+  background-color: #32465a;
+  margin-top: 150px;
+  margin-bottom: 50px; }
 
 .wrap {
   max-width: 68em;
@@ -131,6 +133,13 @@ button {
     width: 150px;
     text-align: center; }
 
+hr {
+  background-color: #32465a;
+  border: none;
+  height: 1px;
+  width: 95%;
+  margin: 25px auto; }
+
 a {
   color: #1BBC9B;
   text-decoration: none;
@@ -142,7 +151,11 @@ a {
 
 nav {
   background-color: #fff;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
 
 nav ul {
   max-width: 68em;
