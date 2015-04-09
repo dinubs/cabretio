@@ -44,7 +44,7 @@ module.exports = {
 
 	show: function(req, res) {
 		Citation.findOne(req.params.id).populate("category").exec(function(err, data){
-			if ((!req.session.authenticated || req.user.id != data.user || err) && data.user) {
+			if (err || !data || (!req.session.authenticated || req.user.id != data.user || err) && data.user) {
 				req.flash('error', "That's not your citation to view!");
 				return res.redirect('/')
 			}
