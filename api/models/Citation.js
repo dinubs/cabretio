@@ -18,8 +18,7 @@ var Citation = {
 			defaultsTo: 'n.p'
 		},
 		isUrl: {
-			type: 'boolean',
-			defaultsTo: false
+			type: 'boolean'
 		},
 		website: {
 			type: 'string', 

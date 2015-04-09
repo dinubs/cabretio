@@ -2,6 +2,8 @@ module.exports = {
 
 	create: function(req, res) {
 		var citation = req.body;
+		sails.log(citation);
+		if (citation.isUrl == 'on') {citation.isUrl = true} else {citation.isUrl = false;}
 		if (req.session.authenticated) {
 			Category.findOrCreate({'user': req.user.id, 'title': citation.category}).exec(function(err, data) {
 				Citation.create({
@@ -11,6 +13,7 @@ module.exports = {
 					'author': citation.author,
 					'publicationInfo': citation.publication,
 					'website': citation.url,
+					'isUrl': citation.isUrl,
 					'dateAccessed': citation.dateAccessed,
 					'journalTitle': citation.journalTitle,
 					'yearPublished': citation.yearPublished
@@ -25,6 +28,7 @@ module.exports = {
 				'author': citation.author,
 				'publicationInfo': citation.publication,
 				'website': citation.url,
+				'isUrl': citation.isUrl,
 				'dateAccessed': citation.dateAccessed,
 				'journalTitle': citation.journalTitle,
 				'yearPublished': citation.yearPublished
@@ -48,6 +52,7 @@ module.exports = {
 				req.flash('error', "That's not your citation to view!");
 				return res.redirect('/')
 			}
+			sails.log(data);
 			res.view({citation: data});	
 		});
 	},
