@@ -8,7 +8,11 @@
  * For more info on Sails models, see:
  * http://sailsjs.org/#/documentation/concepts/ORM
  */
-
+ if (process.env.PRODUCTION) {
+  var callback = 'safe'
+ } else {
+  var callback = 'migrate';
+ }
 module.exports.models = {
 
   /***************************************************************************
@@ -27,6 +31,6 @@ module.exports.models = {
   * See http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  migrate: 'alter'
+  migrate: callback
 
 };
